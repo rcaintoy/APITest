@@ -14,3 +14,4 @@ Request API Testing
     should contain     ${body_content}     Janet
     should contain     ${body_content}     Janet
     should contain     ${body_content}     Janet
+    should contain     ${body_content}     Janet
