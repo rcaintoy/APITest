@@ -12,5 +12,5 @@ Request API Testing
     ${body_content}=    convert to string  ${response.content}
     should be equal      ${status_response}    200
     should contain     ${body_content}     Janet
-    should contain     ${body_content}     Janet
+   
     
