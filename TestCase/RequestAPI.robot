@@ -1,5 +1,5 @@
 *** Settings ***
-Library    RequestsLibrary
+Library     RequestsLibrary
 
 *** Variables ***
 ${baseUrl}  https://reqres.in/
