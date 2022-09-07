@@ -1,0 +1,32 @@
+[Test Scenario 1: User can access Amazon Site ]
+[Steps - Actions]
+1. User searches for product
+
+[Expected Result]
+Search result page loads successful and contains or more products
+==========================
+
+[Test Scenario 2: User can add to cart]
+[Steps - Actions ]
+1. Users searches for a product
+[Expected Result] Search results page loads successfully  and contains 1 or more products
+2. User adds  products ro shopping cart
+[Expected Result] Shopping cart  page loads and selected product exist
+3. User clicks "Add to Cart" link on product
+[Expected Result] Results page load and  Products matching search term exist
+4. User clicks the " Proceed to checkout" button
+[Expected Result] Sign in page load successfully
+
+
+
+
+
+
+==========================
+
+
+
+
+
+
+
