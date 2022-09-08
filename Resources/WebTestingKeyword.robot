@@ -1,12 +1,12 @@
 *** Settings ***
 Library    SeleniumLibrary
+Resource    ../Resources/PageObjects/LandingPage.robot
 
 *** Keywords ***
 
+
 Search for Products
-    Go to   http://amazon.com
-    maximize browser window
-    input text    //input[@id='twotabsearchtextbox']    Headset
+    input text     ${searchfield}    ${Searchproduct}
     click button    //input[@id='nav-search-submit-button']
     wait until page contains    RESULTS
 
@@ -22,5 +22,6 @@ Begin Checkout
     click element    //input[@name='proceedToRetailCheckout']
     page should contain    Sign in
     element text should be    //h1[@class='a-spacing-small']    Sign in
+
 
 
