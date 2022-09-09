@@ -6,8 +6,8 @@ Library    SeleniumLibrary
 
 *** Keywords ***
 Begin Web Test
-    open browser    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login   headlesschrome
-    sleep    10
+    open browser    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login   chrome
+    wait until page contains    Login
 
 Close Web Test
     close browser
