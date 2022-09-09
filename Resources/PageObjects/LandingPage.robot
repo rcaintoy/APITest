@@ -2,6 +2,7 @@
 Library    SeleniumLibrary
 
 *** Variables ***
-${Searchfield}=    //input[@id='twotabsearchtextbox']
-${Searchproduct}=   Headset
+${UserName}=    //input[@name='username']
+${Password}=    //input[@name='password']
+
 
