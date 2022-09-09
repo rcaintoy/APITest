@@ -11,7 +11,7 @@ User must sign in to check out
     [Tags]  Smoke
     Common.Begin Web Test
     WebTestingKeyword.Login Page
-
+    WebTestingKeyword.Add Employee
     Common.Close Web Test
 
 
