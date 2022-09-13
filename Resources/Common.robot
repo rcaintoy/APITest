@@ -4,7 +4,7 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}    https://www.saucedemo.com/
-${BROWSER}=  chrome
+${BROWSER}=  headlesschrome
 
 
 *** Keywords ***
