@@ -3,7 +3,7 @@ Resource    ../Resources/Common.robot
 Resource    ../Resources/WebTestingKeyword.robot
 
 *** Variables ***
-
+*** Variables ***
 
 *** Test Cases ***
 User must sign in to check out
@@ -13,6 +13,8 @@ User must sign in to check out
     WebTestingKeyword.Login Page
     WebTestingKeyword.ProductInformation
     Common.Close Web Test
+    
+
    
 
 
