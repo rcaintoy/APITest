@@ -4,6 +4,7 @@ Resource    ../Resources/WebTestingKeyword.robot
 
 
 
+*** Variable ***
 
 *** Test Cases ***
 User must sign in to check out
