@@ -2,7 +2,7 @@
 Resource    ../Resources/Common.robot
 Resource    ../Resources/WebTestingKeyword.robot
 
-*** Variables ***
+
 
 
 *** Test Cases ***
