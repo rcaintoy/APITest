@@ -4,15 +4,18 @@ Library    SeleniumLibrary
 
 *** Variables ***
 ${URL}    https://www.saucedemo.com/
-${BROWSER}=  headlesschrome
+${BROWSER}=  chrome
 
 
 *** Keywords ***
 Begin Web Test
     open browser    ${URL}      ${BROWSER}
+    sleep    2
 
 
 Close Web Test
     close browser
+
+
 
 

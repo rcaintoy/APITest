@@ -1,4 +1,35 @@
+
 {
-    "login_username": "standard_user",
-    "login_password": "secret_sauce"
+    "BaseUrl": {
+       "baseUrl":  "https://reqres.in"
+    },
+    "GETRequest": {
+        "endpoint": "/api/users/2",
+        "email":    "janet.weaver@reqres.in",
+        "first_name":       "Janet",
+        "last_name":    "Weaver"
+    },
+    "POSTRequest":
+    {
+        "endpoint": "/api/users",
+        "name":    "John",
+        "job":  "Nurse"
+
+    },
+    "PUTRequest":
+    {
+        "endpoint": "/api/users/2",
+        "name": "Jess",
+        "job": "QA"
+
+    },
+     "DeleteRequest":
+    {
+        "endpoint": "/api/users/2"
+
+
+    }
 }
+
+
+

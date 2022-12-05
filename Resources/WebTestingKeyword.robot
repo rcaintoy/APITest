@@ -11,7 +11,7 @@ Login Page
     [Documentation]    Login Page
     ${file}    load json from file    TestData/TestData.json
     ${json_login_username}    get value from json    ${file}    $.login_username
-    ${json_login_password}    get value from json    ${file}    $.login_password
+    ${json_login_password}    get value from json    ${file}     $.login_password
 
     click element    ${UserName}
     input text    ${UserName}     ${json_login_username[0]}
@@ -23,7 +23,10 @@ Login Page
 
 ProductInformation
     page should contain element    ${Product}
+
     click element    ${Checklist}
+
+
 
 
 
