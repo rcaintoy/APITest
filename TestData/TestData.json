@@ -4,30 +4,27 @@
        "baseUrl":  "https://reqres.in"
     },
     "GETRequest": {
-        "endpoint": "/api/users/2",
-        "email":    "janet.weaver@reqres.in",
-        "first_name":       "Janet",
-        "last_name":    "Weaver"
+        "endpoint":   "/api/users/2",
+        "email":      "janet.weaver@reqres.in",
+        "first_name": "Janet",
+        "last_name":  "Weaver"
     },
     "POSTRequest":
     {
-        "endpoint": "/api/users",
-        "name":    "John",
-        "job":  "Nurse"
-
+        "endpoint":   "/api/users",
+        "name":       "John",
+        "job":        "Nurse"
     },
     "PUTRequest":
     {
-        "endpoint": "/api/users/2",
-        "name": "Jess",
-        "job": "QA"
-
+        "endpoint":  "/api/users/2",
+        "name":      "Jess",
+        "job":       "QA"
     },
      "DeleteRequest":
     {
-        "endpoint": "/api/users/2"
-
-
+        "endpoint": "/api/users/2",
+        "endpoint1": "endpoint2"
     }
 }
 

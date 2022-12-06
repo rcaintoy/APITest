@@ -88,6 +88,7 @@ Verify Delete Request and validate the response code and response body
      ${response_body}=  convert to string   ${response.content}
      should be equal    ${status_response}   204
      should be empty   ${response_body}
+     should be empty   ${response_body}
 
 
 
