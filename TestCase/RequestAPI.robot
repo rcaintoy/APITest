@@ -5,29 +5,29 @@ Library    JSONLibrary
 *** Test Cases ***
 Verify GET Request and validate the response code and response body
     ${json_obj}=    load json from file    TestData/TestData.json
-    @{baseUrl}=     get value from json     ${json_obj}     BaseUrl.baseUrl
-    @{endpoint}=        get value from json     ${json_obj}   GETRequest.endpoint
-    create session      usersession   @{baseUrl}
-    ${response}=    get on session     usersession     @{endpoint}
+    ${baseUrl}=     get value from json     ${json_obj}     BaseUrl.baseUrl
+    ${endpoint}=        get value from json     ${json_obj}   GETRequest.endpoint
+    create session      usersession   ${baseUrl[0]}
+    ${response}=    get on session     usersession     ${endpoint[0]}
 
     #Validate response status code
     ${status_response}=  convert to string   ${response.status_code}
 
 
     #Value from the TestData file
-    @{expected_email}=     get value from json   ${json_obj}     GETRequest.email
-    @{expected_firstname}=     get value from json   ${json_obj}   GETRequest.first_name
-    @{expected_lastname}=     get value from json    ${json_obj}     GETRequest.last_name
+    ${expected_email}=     get value from json   ${json_obj}     GETRequest.email
+    ${expected_firstname}=     get value from json   ${json_obj}   GETRequest.first_name
+    ${expected_lastname}=     get value from json    ${json_obj}     GETRequest.last_name
 
 
     #Validation
     ${response_body}=        set variable           ${response.json()}
-    @{actual_email}=        get value from json    ${response_body}     data.email
-    @{actual_firstname}=    get value from json    ${response_body}     data.first_name
-    @{actual_lastname}=     get value from json    ${response_body}     data.last_name
-    should be equal         @{actual_email}           @{expected_email}
-    should be equal         @{actual_firstname}       @{expected_firstname}
-    should be equal         @{actual_lastname}        @{expected_lastname}
+    ${actual_email}=        get value from json    ${response_body}     data.email
+    ${actual_firstname}=    get value from json    ${response_body}     data.first_name
+    ${actual_lastname}=     get value from json    ${response_body}     data.last_name
+    should be equal         ${actual_email[0]}           ${expected_email[0]}
+    should be equal         ${actual_firstname[0]}       ${expected_firstname[0]}
+    should be equal         ${actual_lastname[0]}        ${expected_lastname[0]}
 
 
 Verify POST Request and validate the response code, response body, and response headers
@@ -37,8 +37,8 @@ Verify POST Request and validate the response code, response body, and response 
     ${expected_name}=            get value from json     ${json_obj}        POSTRequest.name
     ${expected_job}=             get value from json     ${json_obj}        POSTRequest.job
 
-    create session      usersession   ${baseUrl[0]}
-    ${endpoint}      set variable    ${endpoint[0]}
+    create session      usersession   @{baseUrl}
+    ${endpoint}      set variable    @{endpoint}
     ${body}=         create dictionary   name= ${expected_name[0]}    job= ${expected_job[0]}
     ${header}=       create dictionary    Content-Type=application/json
     ${response}=     post on session    usersession    ${endpoint}      json=${body}    headers=${header}
