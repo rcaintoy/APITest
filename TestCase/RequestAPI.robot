@@ -7,8 +7,8 @@ Verify GET Request and validate the response code and response body
     ${json_obj}=    load json from file    TestData/TestData.json
     ${baseUrl}=     get value from json     ${json_obj}     BaseUrl.baseUrl
     ${endpoint}=        get value from json     ${json_obj}   GETRequest.endpoint
-    create session      usersession   ${baseUrl[0]}
-    ${response}=    get on session     usersession     ${endpoint[0]}
+    create session      mysession   ${baseUrl[0]}
+    ${response}=    get on session     mysession     ${endpoint[0]}
 
     #Validate response status code
     ${status_response}=  convert to string   ${response.status_code}
@@ -37,11 +37,11 @@ Verify POST Request and validate the response code, response body, and response 
     ${expected_name}=            get value from json     ${json_obj}        POSTRequest.name
     ${expected_job}=             get value from json     ${json_obj}        POSTRequest.job
 
-    create session      usersession   @{baseUrl}
+    create session      mysession   @{baseUrl}
     ${endpoint}      set variable    @{endpoint}
     ${body}=         create dictionary   name= ${expected_name[0]}    job= ${expected_job[0]}
     ${header}=       create dictionary    Content-Type=application/json
-    ${response}=     post on session    usersession    ${endpoint}      json=${body}    headers=${header}
+    ${response}=     post on session    mysession    ${endpoint}      json=${body}    headers=${header}
     ${status_response}=    convert to string   ${response.status_code}
     ${getHeaderValue}=     Get From Dictionary  ${response.headers}  Content-Type
 
@@ -62,11 +62,11 @@ Verify PUT Request and validate the response code and response body
     ${expected_name}=     get value from json   ${json_obj}     PUTRequest.name
     ${expected_job}=      get value from json   ${json_obj}     PUTRequest.job
 
-    create session     session     ${baseUrl[0]}
+    create session     mysession     ${baseUrl[0]}
     ${endpoint}    set variable    ${endpoint[0]}
     ${body}=   create dictionary   name=${expected_name[0]}    job= ${expected_job[0]}
     ${header}=    create dictionary    Content-Type=application/json
-    ${response}=     put on session    session    ${endpoint}      json=${body}    headers=${header}
+    ${response}=     put on session    mysession    ${endpoint}      json=${body}    headers=${header}
 
     #Validation
     ${status_response}=  convert to string   ${response.status_code}
