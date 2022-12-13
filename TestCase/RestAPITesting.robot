@@ -2,6 +2,9 @@
 Library    RequestsLibrary
 Library    Collections
 Library    JSONLibrary
+
+
+
 *** Test Cases ***
 Verify GET Request and validate the response code and response body
     ${json_obj}=    load json from file    TestData/TestData.json
