@@ -18,13 +18,14 @@ Verify GET Request and validate the response code and response body
     ${expected_email}=     get value from json   ${json_obj}     GETRequest.email
     ${expected_firstname}=     get value from json   ${json_obj}   GETRequest.first_name
     ${expected_lastname}=     get value from json    ${json_obj}     GETRequest.last_name
-
+    log to console    ${response.content}
 
     #Validation
     ${response_body}=        set variable           ${response.json()}
     ${actual_email}=        get value from json    ${response_body}     data.email
     ${actual_firstname}=    get value from json    ${response_body}     data.first_name
     ${actual_lastname}=     get value from json    ${response_body}     data.last_name
+
     should be equal         ${actual_email[0]}           ${expected_email[0]}
     should be equal         ${actual_firstname[0]}       ${expected_firstname[0]}
     should be equal         ${actual_lastname[0]}        ${expected_lastname[0]}
@@ -49,7 +50,7 @@ Verify POST Request and validate the response code, response body, and response 
     #Validation
     ${response_body}=   set variable    ${response.json()}
     ${data_name}=          get value from json     ${response_body}    name
-
+     log to console    ${response_body}
     should be equal    ${status_response}   201
     should be equal    ${getHeaderValue}  application/json; charset=utf-8
     should be equal     ${data_name[0].strip()}      ${expected_name[0].strip()}
