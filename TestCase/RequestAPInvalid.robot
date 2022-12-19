@@ -7,7 +7,6 @@ Library    JSONLibrary
 ${baseUrl}  https://yourbaseurl
 
 
-
 *** Test Cases ***
 POST API Testing
      create session     mysession     ${baseUrl}
@@ -15,9 +14,6 @@ POST API Testing
      ${body}=   create dictionary   email="hi"
      ${header}=    create dictionary    Content-Type=application/json
      ${response}=     post request    mysession    ${endpoint}      json=${body}    headers=${header}
-
-
-
      ${status_response}=  convert to string   ${response.status_code}
      ${body_content}=    convert to string  ${response.content}
      #Validation
