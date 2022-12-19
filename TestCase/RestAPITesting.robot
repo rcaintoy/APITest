@@ -3,11 +3,13 @@ Library    RequestsLibrary
 Library    Collections
 Library    JSONLibrary
 
-
+*** Variables ***
+${testdata_location}=   Resources/TestData.json
 
 *** Test Cases ***
 Verify GET Request and validate the response code and response body
-    ${json_obj}=    load json from file    TestData/TestData.json
+
+    ${json_obj}=    load json from file         ${testdata_location}
     ${baseUrl}=     get value from json     ${json_obj}     BaseUrl.baseUrl
     ${endpoint}=        get value from json     ${json_obj}   GETRequest.endpoint
     create session      mysession   ${baseUrl[0]}
@@ -18,10 +20,9 @@ Verify GET Request and validate the response code and response body
 
 
     #Value from the TestData file
-    ${expected_email}=     get value from json   ${json_obj}     GETRequest.email
+    ${expected_email}=     get value from json   ${json_obj}    GETRequest.email
     ${expected_firstname}=     get value from json   ${json_obj}   GETRequest.first_name
     ${expected_lastname}=     get value from json    ${json_obj}     GETRequest.last_name
-    log to console    ${response.content}
 
     #Validation
     ${response_body}=        set variable           ${response.json()}
@@ -35,7 +36,7 @@ Verify GET Request and validate the response code and response body
 
 
 Verify POST Request and validate the response code, response body, and response headers
-    ${json_obj}=        load json from file    TestData/TestData.json
+    ${json_obj}=        load json from file   ${testdata_location}
     ${baseUrl}=         get value from json     ${json_obj}   BaseUrl.baseUrl
     ${endpoint}=        get value from json     ${json_obj}   POSTRequest.endpoint
     ${expected_name}=            get value from json     ${json_obj}        POSTRequest.name
@@ -59,7 +60,7 @@ Verify POST Request and validate the response code, response body, and response 
     should be equal     ${data_name[0].strip()}      ${expected_name[0].strip()}
 
 Verify PUT Request and validate the response code and response body
-    ${json_obj}=        load json from file    TestData/TestData.json
+    ${json_obj}=        load json from file    ${testdata_location}
     ${baseUrl}=         get value from json     ${json_obj}   BaseUrl.baseUrl
     ${endpoint}=     get value from json     ${json_obj}   PUTRequest.endpoint
     #Value from the TestData file
@@ -81,7 +82,7 @@ Verify PUT Request and validate the response code and response body
 
 
 Verify Delete Request and validate the response code and response body
-    ${json_obj}=        load json from file    TestData/TestData.json
+    ${json_obj}=        load json from file    ${testdata_location}
     ${baseUrl}=         get value from json     ${json_obj}   BaseUrl.baseUrl
     ${endpoint}=         get value from json     ${json_obj}   DeleteRequest.endpoint
      create session     mysession     ${baseUrl[0]}

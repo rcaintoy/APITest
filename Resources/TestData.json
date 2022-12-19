@@ -24,7 +24,13 @@
     {
         "endpoint": "/api/users/2",
         "endpoint1": "endpoint2"
-    }
+    },
+     "RequirementsList": {
+
+                "data": ["Proof of identification/Valid Identification Card", "Notarized Special Power of Attorney", "Proof of Ownership or Address","Lease Contract or Certification from the owner and Notarized Undertaking", "Electrical Permit with Endorsement","Electrical Permit"],
+                "negative": ["1", "Notarized Special Power of Attorney", "Proof of Ownership or Address","Lease Contract or Certification from the owner and Notarized Undertaking", "Electrical Permit with Endorsement","Electrical Permit"]
+
+        }
 }
 
 

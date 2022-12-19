@@ -4,7 +4,7 @@ Library    Collections
 Library    JSONLibrary
 
 *** Variables ***
-${baseUrl}  https://reqres.in
+${baseUrl}  https://yourbaseurl
 
 
 
